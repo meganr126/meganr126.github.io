@@ -4,9 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="Single-file Bootstrap template"/>
-    <meta name="author" content="Anton Staroverov (http://tonystar.me)"/>
-    <meta name="generator" content="Bootstrap Template (http://bootstrap.tonystar.me/template)"/>
+    <meta name="description" content="data viiiiz"/>
     <title>Data Viz Test</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="//cdn.rawgit.com/tonystar/bootstrap-plugins/master/dist/css/bootstrap-plugins.min.css"/>
@@ -165,6 +163,7 @@ h2{
 
 .chart{
   width:100%;
+  min-height:300px;
 }
             
     </style>
@@ -218,11 +217,12 @@ h2{
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">    
+                  <div class="clearfix"></div>
+                    <div class="col-lg-6">    
                       <div id="chart_div1" class="chart"> </div>          
                     </div>
 
-                    <<div class="col-md-6">    
+                    <div class="col-lg-6">    
                       <div id="chart_div2" class="chart"> </div>          
                     </div>
                 </div>
@@ -267,8 +267,6 @@ h2{
 
                         // Set chart options
                         var options = {'title':'Sex',
-                                       'width':600,
-                                       'height':400,
                                        'colors': ['#B00519', '#FF5468']};
 
                         // Instantiate and draw our chart, passing in some options.
@@ -294,8 +292,6 @@ h2{
 
                             // Set chart options
                             var options = {'title':'Race',
-                                           'width':600,
-                                           'height':400,
                                            'colors': ['#B00519', '#FF5468', '#FF0724', 
                                                       '#7F2A34', '#CC061D', '#990416', '#D44657']};
 
