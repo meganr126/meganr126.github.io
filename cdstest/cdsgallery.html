@@ -263,6 +263,26 @@ h2{
 .popup-close:hover:before {
   background: #fff;
 }
+
+.navbar-brand{
+  margin-top:-10px;
+}
+
+.navbar{
+  background-color:#000;
+  color:#fff;
+}
+
+.navbar .nav > li > a {
+    color:  #fff;
+    font-family:"Roboto";
+    font-weight:300;
+    text-transform: uppercase;
+}
+
+.navbar .nav > li > a:hover {
+    color:  #B00519;
+}
             
     </style>
   </head>
@@ -270,16 +290,14 @@ h2{
     <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <a class="navbar-brand page-scroll" href="/"><img id="my-img" src="Swhite.png" width="30px" onmouseover="hover(this);" onmouseout="unhover(this);" />
-                </a>
-            </div>
-
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/index.html">
+              <img id="my-img" src="Swhite.png" width="40px" onmouseover="hover(this);" onmouseout="unhover(this);" />
+          </a>
         </div>
-        <!-- /.container-fluid -->
+      </div>
     </nav>
 
     <!-- About Section -->
