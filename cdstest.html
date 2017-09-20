@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css"/>
     <!--link rel="stylesheet" href="custom.css"/-->
-    <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/jazl0ie/hQyotpqsz/stylenew.css">
+    <link rel="stylesheet" type="text/css" href="stylenew.css">
     
     <style type="text/css">
+
         .section-subheading{
 	        color:#ee2843;
         }
@@ -31,25 +32,24 @@
         .maincont{
             margin: 0 auto;
             width: 100%;
-  
-              background: #EBCCD0;
-  background-image: -webkit-radial-gradient(top, circle cover, #3372AB, #044178 80%);
-  background-image: -moz-radial-gradient(top, circle cover, #3372AB, #044178 80%);
-  background-image: -o-radial-gradient(top, circle cover, #3372AB, #044178 80%);
-  background-image: radial-gradient(top, circle cover, #3372AB, #044178 80%);
-        }
+            height:100%;
+            height:100vh;
+            background:#000;
+          }
         
         .navbar-custom{
-            background:#ffffff;
+            background:#000;
+            height:50px;
         }
         
         
         .navbar-custom .navbar-nav li a{
-            color: #ee2843;
+            margin-top:-25px;
+            color: #fff;
         }
         
         .navbar-custom .navbar-nav li a:hover{
-            color: #044178;
+            color: #ee2843;
         }
         
         hr.grad { 
@@ -63,17 +63,77 @@
 }
 
     .navbar-custom .navbar-brand {
-        color: #ee2843;
+        color: #fff;
     }
     
     .navbar-custom .navbar-brand:hover {
-        color: #044178;
+        color: #ee2843;
     }
     
     .navbar{
         border-bottom:4px solid #ee2843;
     }
 
+    .blinking-cursor {
+  font-weight: 500;
+  font-size: 50px;
+  color: #fff;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+h1{
+    margin-top:18%;
+    font-size:50px;
+}
             
     </style>
   </head>
@@ -85,7 +145,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand page-scroll" href="#page-top">Title</a>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="https://i.imgur.com/rT341Ar.png" height="30px" ></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -93,9 +153,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#a">Subhead</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#b">Subhead</a>
@@ -117,89 +174,57 @@
     <header>
         <div class="container maincont">
             <div class="intro-text">
-                <img class="img-responsive" src="https://i.imgur.com/rT341Ar.png" width="275px">
-                    <div class="intro-text">
-                        <h1 class="name">Title title title</h1>
-                        
-                        
-                        <!--<hr class="star-light">
-                        <p>&nbsp;
-                        <span class="typewrite skills" data-period="2000" data-type='[ "message 1", "another message", "donate today!", "whoo hoo" ]'>
-                            <span class="wrap"></span>
-                          </span>&nbsp;
-                 
-                          </p>-->
-            </div>
+                <h1>Dear Cornell Community,<span class="blinking-cursor"> |</span></h1>
                 
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="a" class="bg-light-gray startchange">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Subhead</h2>
-                    <h3 class="section-subheading text-muted">Test subtitle goes here</h3>
-                    <hr class="grad">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-10 text-justify col-md-offset-1">
-                <p class="text-muted">
-                Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
-</p>
-                </div>
-        </div>
-        </div>
-    </section>
-    
-    <!--Donate & How-->
-    <section id="b" class="bg-light-gray">
-        <div class="container">
-        <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Subhead</h2>
-                    <h3 class="section-subheading text-muted">Test subtitle goes here</h3><hr class="grad">
-                </div>
-            <div class="row">
 
-                <div class="col-lg-8 col-md-offset-2" id="chart_div1">               
+     <section id="b" class="bg-light-gray">
+        <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Subhead</h2>
+                        <h3 class="section-subheading text-muted">Test subtitle goes here</h3><hr class="grad">
+                    </div>
                 </div>
-                <div class="col-lg-10 text-justify col-md-offset-1">
-                    <p class="text-muted">
-                    Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
-                    </p>
+                <div class="row">
+                    <div class="col-md-7 chart" id="chart_div1">               
+                    </div>
+                    <div class="col-md-5 text-justify">
+                        <p class="text-muted">
+                        Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
     
-    <!-- How Section -->
-    <section id="c">
+    <section id="c" class="bg-light-gray">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Subhead</h2>
-                    <h3 class="section-subheading text-muted">Test subtitle goes here</h3><hr class="grad">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Subhead</h2>
+                        <h3 class="section-subheading text-muted">Test subtitle goes here</h3><hr class="grad">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 text-justify">
+                        <p class="text-muted">
+                        Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
+                        </p>
+                    </div>
+                    <div class="col-md-7 chart" id="chart_div2">               
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 col-md-offset-2" id="chart_div2">               
-                </div>
-                <div class="col-lg-10 text-justify col-md-offset-1">
-                    <p class="text-muted">
-                    Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
-                    </p>
-                </div>
-            </div>
-    </div>
     </section>
     
     
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="typewriter.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                     <script type="text/javascript">
@@ -262,6 +287,11 @@
                             var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
                             chart.draw(data, options);
                           }
+
+                $(window).resize(function(){
+                            drawChart1();
+                            drawChart2();
+                        });
 
                       </script> 
 
