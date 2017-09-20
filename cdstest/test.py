@@ -4,8 +4,8 @@ def importFile(file):
 
 def parse(fFile):
     fFile = fFile.lower()
-    fFile = fFile.replace(';',' ').replace(':',' ').replace(',',' ').replace('“',' ').replace('”',' ')
-    fList = fFile.replace('.',' ').replace(';',' ').replace('’s',' ').split()
+    fFile = fFile.replace(';',' ').replace(':',' ').replace(',',' ')
+    fList = fFile.replace('.',' ').replace(';',' ').split()
     #print(fList)
     d = {}
     for word in fList:
