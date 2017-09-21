@@ -327,43 +327,13 @@ h2{
                 </div>
             </div>
             <div class="row">
-
-            <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-
-            <!-- Trigger the modal with a button -->
-            <img src="cds.png" class="img-responsive" pd-popup-open="popupNew1">
-
-              <div class="popup" pd-popup="popupNew1">
-                  <div class="popup-inner">
-                      <h1 style="text-align:center">Statement Title - Author1</h1>
-                      <hr class="grad">
-                    <p>Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.</p>
-                      <a class="popup-close" pd-popup-close="popupNew1" href="#"> </a>
-                  </div>
+              <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div id="table_div"></div>
               </div>
-            </div> <!--end column-->
+            </div>
+        </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-            <!-- Trigger the modal with a button -->
-            <img src="cds.png" class="img-responsive" pd-popup-open="popupNew2">
-            <!-- Modal -->
-
-                <div class="popup" pd-popup="popupNew2">
-                  <div class="popup-inner">
-                      <h1 style="text-align:center">Statement Title - Author2</h1>
-                      <hr class="grad">
-                    <p>Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.</p>
-                      <a class="popup-close" pd-popup-close="popupNew2" href="#"> </a>
-                  </div>
-              </div>
-            </div> <!--end column-->
-
-            <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-            <!-- Trigger the modal with a button -->
-            <img src="cds.png" class="img-responsive" pd-popup-open="popupNew3">
-            <!-- Modal -->
-
-                <div class="popup" pd-popup="popupNew3">
+        <div class="popup" pd-popup="popupNew3">
                   <div class="popup-inner">
                       <h1 style="text-align:center">Statement Title - Author3</h1>
                       <hr class="grad">
@@ -371,16 +341,47 @@ h2{
                       <a class="popup-close" pd-popup-close="popupNew3" href="#"> </a>
                   </div>
               </div>
-            </div> <!--end column-->
 
-                
-            </div>
-        </div>
     </section>
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var cssClassNames = {
+          'headerRow': 'italic-darkblue-font large-font bold-font',
+          'tableRow': '',
+          'oddTableRow': 'beige-background',
+          'selectedTableRow': 'orange-background large-font',
+          'hoverTableRow': 'white',
+          'headerCell': 'gold-border',
+          'tableCell': '',
+          'rowNumberCell': 'underline-blue-font'};
+        var options = {"allowHtml": true,
+                       "title": "table",
+                       "alternatingRowStyle": false,
+                       "cssClassNames": cssClassNames,
+                       }
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Author');
+        data.addColumn('string', 'Title');
+        data.addColumn('string', 'Date');
+        data.addRows([
+          ['Pollack', '<a href="">Statement Title</a>', "1/2/3"],
+          ['Name',  'Statement Title',  "1/2/3"],
+          ['Name', 'Statement Title', "1/2/3"],
+          ['Name', 'Statement Title',  "1/2/3"]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, options);
+      }
+    </script>
     <script type="text/javascript">
         function hover(element) {
             element.setAttribute('src', 'S.png');
