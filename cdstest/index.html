@@ -250,10 +250,11 @@ h2{
                     <div class="col-lg-6 text-center">    
                       <div id="chart_div2" class="chart"> </div>  
                       <div class="row">
-                          <button id="buttonC">Test C</button>&nbsp;
-                          <button id="buttonD">Test D</button>&nbsp;
-                          <button id="buttonE">Test E</button>&nbsp;
-                          <button id="buttonF">Test F</button>&nbsp;
+                          <button id="pollackCamp">Pollack</button>&nbsp;
+                          <button id="lombardiCamp">Lombardi</button>&nbsp;
+                          <button id="rawlingsCamp">Rawlings</button>&nbsp;
+                          <button id="otherCamp">Other</button>&nbsp;
+                          <button id="totalCamp">Revert</button>&nbsp;
                       </div>          
                     </div>
                 </div>
@@ -324,7 +325,7 @@ h2{
             data1.setValue(0, 1, 3);
             data1.setValue(1, 1, 2);
             data1.setValue(2, 1, 1);
-            options = setOptions("Pollack")
+            options = setOptions("Time of Day: Pollack")
             drawChart1(options);
           }
 
@@ -332,7 +333,7 @@ h2{
             data1.setValue(0, 1, 4);
             data1.setValue(1, 1, 7);
             data1.setValue(2, 1, 6);
-            options = setOptions("Lombardi")
+            options = setOptions("Time of Day: Lombardi")
             drawChart1(options);
           }
 
@@ -340,7 +341,7 @@ h2{
             data1.setValue(0, 1, 0);
             data1.setValue(1, 1, 1);
             data1.setValue(2, 1, 1);
-            options = setOptions("Rawlings")
+            options = setOptions("Time of Day: Rawlings")
             drawChart1(options);
           }
 
@@ -348,7 +349,7 @@ h2{
             data1.setValue(0, 1, 6);
             data1.setValue(1, 1, 2);
             data1.setValue(2, 1, 0);
-            options = setOptions("Other")
+            options = setOptions("Time of Day: Other")
             drawChart1(options);
           }
 
@@ -364,55 +365,69 @@ h2{
         }
 
       function initChart2() {
-          var options = {'title':'Race',
-                         'colors': ['#B00519', '#FF5468', '#FF0724', 
-                                    '#7F2A34', '#CC061D', '#990416', '#D44657']};
+          var options = {'title':"Campus or National: All", 'colors': ['#B00519', '#FF5468', '#FC0724']};
           var data2 = new google.visualization.DataTable();
-          data2.addColumn('string', 'Race');
+          data2.addColumn('string', 'Campus or National');
           data2.addColumn('number', 'Number');
           data2.addRows([
-            ["American Indian or Alaskan Native, non-Hispanic", 7],
-              ["Asian, non-Hispanic", 222],
-              ["Black or African American, non-Hispanic", 39],
-              ["Hispanic/Latino", 67],
-              ["Native Hawaiian or Pacific Islander, non-Hispanic", 3],
-              ["White, non-Hispanic", 357],
-              ["Other", 38],
+            ["Campus", 29],
+              ["National", 4],
+
           ]);
+
+          function setOptions(t){
+            return {'title':t, 'colors': ['#B00519', '#FF5468']};
+          };
 
           var chart = new google.visualization.PieChart(
               document.getElementById('chart_div2'));
-          var buttonA = document.getElementById('buttonC');
-          var buttonB = document.getElementById('buttonD');
+          var pollackCamp = document.getElementById('pollackCamp');
+          var lombardiCamp = document.getElementById('lombardiCamp');
+          var rawlingsCamp = document.getElementById('rawlingsCamp');
+          var otherCamp = document.getElementById('otherCamp');
+          var totalCamp = document.getElementById('totalCamp');
 
-          function drawChart2() {
+          function drawChart2(options) {
             // Disabling the button while the chart is drawing.
             chart.draw(data2, options);
           }
 
-          buttonC.onclick = function() {
-            data2.setValue(0, 1, 1000);
+          pollackCamp.onclick = function() {
+            data2.setValue(0, 1, 3);
+            data2.setValue(1, 1, 3);
+            options = setOptions("Campus or National: Pollack")
+            drawChart2(options);
+          }
+
+          lombardiCamp.onclick = function() {
+            data2.setValue(0, 1, 17);
+            data2.setValue(1, 1, 0);
+            options = setOptions("Campus or National: Lombardi")
+            drawChart2(options);
+          }
+
+          rawlingsCamp.onclick = function() {
+            data2.setValue(0, 1, 1);
             data2.setValue(1, 1, 1);
-            data2.setValue(2, 1, 200);
-            data2.setValue(3, 1, 400);
-            data2.setValue(4, 1, 200);
-            data2.setValue(5, 1, 3);
-            data2.setValue(6, 1, 100);
-            drawChart2();
+            options = setOptions("Campus or National: Rawlings")
+            drawChart2(options);
           }
 
-          buttonD.onclick = function() {
-            data2.setValue(0, 1, 7);
-            data2.setValue(1, 1, 222);
-            data2.setValue(2, 1, 39);
-            data2.setValue(3, 1, 67);
-            data2.setValue(4, 1, 3);
-            data2.setValue(5, 1, 357);
-            data2.setValue(6, 1, 38);
-            drawChart2();
+          otherCamp.onclick = function() {
+            data2.setValue(0, 1, 8);
+            data2.setValue(1, 1, 0);
+            options = setOptions("Campus or National: Other")
+            drawChart2(options);
           }
 
-          drawChart2();
+          totalCamp.onclick = function() {
+            data2.setValue(0, 1, 29);
+            data2.setValue(1, 1, 4);
+            options = setOptions("Campus or National: All")
+            drawChart2(options);
+          }
+
+          drawChart2(options);
         }
 
       $(window).resize(function(){
