@@ -234,8 +234,7 @@ h2{
                         <h3 class="section-subheading text-muted">Test subtitle goes here</h3><hr class="grad">
                     </div>
                 </div>
-                <div class="row">
-                  <div class="clearfix"></div>
+                <!--two graphs and text--><div class="row">
                     <div class="col-lg-6 text-center">    
                       <div id="chart_div1" class="chart"> </div>  
                       <div class="row">
@@ -258,14 +257,34 @@ h2{
                       </div>          
                     </div>
                 </div>
-                </div>
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2 text-justify">
                         <p class="text-muted">
                         <br>Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
-                        </p>
+                        </p><br><br>
                     </div>
-                </div>
+                </div> <!--end -->
+
+                <!--two graphs and text-->
+                <div class="row">
+                    <div class="col-lg-6 text-center">    
+                      <div id="chart_div3" class="chart"> </div>  
+                      <div class="row">
+                          <button id="pollackWords">Pollack</button>&nbsp;
+                          <button id="lombardiWords">Lombardi</button>&nbsp;
+                          <button id="rawlingsWords">Rawlings</button>&nbsp;
+                          <button id="otherWords">Other</button>&nbsp;
+                          <button id="totalWords">Revert</button>&nbsp;
+                      </div>        
+                    </div>
+
+                    <div class="col-lg-6 text-justify">    
+                      <p class="text-muted">
+                        <br>Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
+                        </p>          
+                    </div>
+                  </div>
+
             </div>
     </section>
 
@@ -284,11 +303,12 @@ h2{
                       
 
       // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['corechart', 'calendar']});
 
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(initChart1);
       google.charts.setOnLoadCallback(initChart2);
+      google.charts.setOnLoadCallback(initChart3);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -430,9 +450,121 @@ h2{
           drawChart2(options);
         }
 
+
+        function initChart3() {
+          var options = {'title':"Top Five Words: All", 'colors': ['#B00519', '#FF5468', '#FC0734',
+                                                                   '#FC5367', '#7D0412']};
+          var data3 = new google.visualization.DataTable();
+          data3.addColumn('string', 'Word');
+          data3.addColumn('number', 'Number');
+          data3.addRows([
+            ["Cornell", 168],
+            ["You", 136],
+            ["Students", 107],
+            ["Will", 105],
+            ["I", 103],
+
+          ]);
+
+          function setOptions(t){
+            return {'title':t, 'colors': ['#B00519', '#FF5468', '#FC0734', '#FC5367', '#7D0412']};;
+          };
+
+          var chart = new google.visualization.ColumnChart(
+              document.getElementById('chart_div3'));
+          var pollackWords = document.getElementById('pollackWords');
+          var lombardiWords = document.getElementById('lombardiWords');
+          var rawlingsWords = document.getElementById('rawlingsWords');
+          var otherWords = document.getElementById('otherWords');
+          var totalWords = document.getElementById('totalWords');
+
+          function drawChart3(options) {
+            // Disabling the button while the chart is drawing.
+            chart.draw(data3, options);
+          }
+
+          pollackWords.onclick = function() {
+            data3.setValue(0, 0, "Cornell");
+            data3.setValue(0, 1, 40);
+            data3.setValue(1, 0, "I");
+            data3.setValue(1, 1, 31);
+            data3.setValue(2, 0, "Students");
+            data3.setValue(2, 1, 29);
+            data3.setValue(3, 0, "Will");
+            data3.setValue(3, 1, 29);
+            data3.setValue(4, 0, "Our");
+            data3.setValue(4, 1, 26);
+            options = setOptions("Top Five Words: Pollack")
+            drawChart3(options);
+          }
+
+          lombardiWords.onclick = function() {
+            data3.setValue(0, 0, "You");
+            data3.setValue(0, 1, 109);
+            data3.setValue(1, 0, "Cornell");
+            data3.setValue(1, 1, 89);
+            data3.setValue(2, 0, "I");
+            data3.setValue(2, 1, 64);
+            data3.setValue(3, 0, "Students");
+            data3.setValue(3, 1, 49);
+            data3.setValue(4, 0, "Will");
+            data3.setValue(4, 1, 49);
+            options = setOptions("Top Five Words: Lombardi")
+            drawChart3(options);
+          }
+
+          rawlingsWords.onclick = function() {
+            data3.setValue(0, 0, "Cornell");
+            data3.setValue(0, 1, 26);
+            data3.setValue(1, 0, "Students");
+            data3.setValue(1, 1, 21);
+            data3.setValue(2, 0, "Will");
+            data3.setValue(2, 1, 19);
+            data3.setValue(3, 0, "From");
+            data3.setValue(3, 1, 16);
+            data3.setValue(4, 0, "Our");
+            data3.setValue(4, 1, 14);
+            options = setOptions("Top Five Words: Rawlings")
+            drawChart3(options);
+          }
+
+          otherWords.onclick = function() {
+            data3.setValue(0, 0, "You");
+            data3.setValue(0, 1, 15);
+            data3.setValue(1, 0, "Cornell");
+            data3.setValue(1, 1, 14);
+            data3.setValue(2, 0, "New");
+            data3.setValue(2, 1, 13);
+            data3.setValue(3, 0, "State");
+            data3.setValue(3, 1, 12);
+            data3.setValue(4, 0, "Day");
+            data3.setValue(4, 1, 10);
+            options = setOptions("Top Five Words: Other")
+            drawChart3(options);
+          }
+
+          totalWords.onclick = function() {
+            data3.setValue(0, 0, "Cornell");
+            data3.setValue(0, 1, 168);
+            data3.setValue(1, 0, "You");
+            data3.setValue(1, 1, 136);
+            data3.setValue(2, 0, "Students");
+            data3.setValue(2, 1, 107);
+            data3.setValue(3, 0, "Will");
+            data3.setValue(3, 1, 105);
+            data3.setValue(4, 0, "I");
+            data3.setValue(4, 1, 103);
+            options = setOptions("Top Five Words: Total")
+            drawChart3(options);
+          }
+
+          drawChart3(options);
+        }
+
       $(window).resize(function(){
         initChart1();
         initChart2();
+        initChart3();
       });
 
     </script> 

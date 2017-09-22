@@ -27,7 +27,7 @@ def printResult(dic):
                 "is", "to", "be", "this",
                 "that", "with", "have", "as", "been",
                 "these", "those", "can", "about", "who", "am"]
-    for key, value in sorted(dic.items(), key=lambda x: x[1], reverse=True):
+    for key, value in sorted(dic.items(), key=lambda x: x[1]):
         if (value>1 and (key not in excluded)):
             print(str(key)+": "+str(value))
 
