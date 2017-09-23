@@ -304,7 +304,7 @@ h2{
 
                   <!--two graphs and text-->
                 <div class="row spacer">
-                    <div class="col-lg-10 col-lg-offset-1 text-center"> 
+                    <div class="col-lg-12 text-center"> 
 
                       <h1 class="wordy"></h1>
                     </div> 
@@ -684,17 +684,17 @@ h2{
           var val1 = $("#person1").val();
           var val2 = $("#person2").val();
 
-          if ((val1=="pollack1" && val2=="lombardi2") || (val1=="pollack2" && val2=="lombardi1")){
+          if ((val1=="pollack1" && val2=="lombardi2") || (val2=="pollack2" && val1=="lombardi1")){
             $(".wordy").html(pl);
-          } if ((val1=="pollack1" && val2=="rawlings2") || (val1=="pollack2" && val2=="rawlings1")){
+          } if ((val1=="pollack1" && val2=="rawlings2") || (val2=="pollack2" && val1=="rawlings1")){
             $(".wordy").html(pr);
-          } if ((val1=="pollack1" && val2=="other2") || (val1=="pollack2" && val2=="other1")){
+          } if ((val1=="pollack1" && val2=="other2") || (val2=="pollack2" && val1=="other1")){
             $(".wordy").html(po);
-          } if ((val1=="rawlings1" && val2=="lombardi2") || (val1=="rawlings2" && val2=="lombardi1")){
+          } if ((val1=="rawlings1" && val2=="lombardi2") || (val2=="rawlings2" && val1=="lombardi1")){
             $(".wordy").html(lr);
-          } if ((val1=="other1" && val2=="lombardi2") || (val1=="other2" && val2=="lombardi1")){
+          } if ((val1=="other1" && val2=="lombardi2") || (val2=="other2" && val1=="lombardi1")){
             $(".wordy").html(lo);
-          } if ((val1=="other1" && val2=="rawlings2") || (val1=="other2" && val2=="rawlings1")){
+          } if ((val1=="other1" && val2=="rawlings2") || (val2=="other2" && val1=="rawlings1")){
             $(".wordy").html(ro);
           }
           console.log(val1, val2);
