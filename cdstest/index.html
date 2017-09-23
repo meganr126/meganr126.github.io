@@ -183,6 +183,22 @@ h2{
     font-weight:300;
   font-size:12px;
 }
+
+.wordy{
+  margin-top:0;
+  font-size:36px;
+  font-family:"Roboto";
+  font-weight:500;
+  color:#000;
+}
+
+.wordy b{
+  color:#B00519;
+}
+
+.spacer{
+  margin-top:4%;
+}
             
     </style>
   </head>
@@ -285,12 +301,57 @@ h2{
                     </div>
                   </div>
 
+
+                  <!--two graphs and text-->
+                <div class="row spacer">
+                    <div class="col-lg-10 col-lg-offset-1 text-justify"> 
+
+                      <h1 class="wordy"></h1>
+                    </div> 
+                </div>
+                <div class="row" style="margin-top:2%">
+
+                    <div class="col-lg-4 col-lg-offset-4 text-center"> 
+                        <select name="person1" id="person1">
+                          <option value="pollack1" selected>Pollack</option>
+                          <option value="lombardi1">Lombardi</option>
+                          <option value="rawlings1">Rawlings</option>
+                          <option value="other1">Other</option>
+                        </select>
+
+                        <select name="person2" id="person2">
+                          <option value="pollack2">Pollack</option>
+                          <option value="lombardi2" selected>Lombardi</option>
+                          <option value="rawlings2">Rawlings</option>
+                          <option value="other2">Other</option>
+                        </select>
+
+                        <button id="getpeople">Go</button>&nbsp;
+                    </div> 
+                  </div>
+
+
+                  <!--two graphs and text-->
+                <div class="row spacer">
+
+                    <div class="col-lg-6 text-justify">    
+                      <p class="text-muted">
+                        <br>Lorem ipsum dolor sit amet, odio aliquam purus, tortor volutpat fames, tristique molestie, mattis suspendisse bibendum. In non nibh quam, morbi dui, ac pellentesque vestibulum proin pede enim. Mollis nunc magna mattis cursus, ultrices tincidunt vel, at dignissim libero eget, nascetur amet tincidunt. Augue consequat vulputate arcu, augue duis adipiscing ultrices wisi quis, rhoncus faucibus accumsan sociosqu dui in arcu, ut gravida eget ante sed, at rutrum. Iaculis vivamus, mi posuere vestibulum id. Ipsum ultricies, tortor nibh quam aliquet vulputate dis ullam, nulla odio volutpat ut, eget sed faucibus. Libero sed magna cras per magna. Et euismod dictumst.
+                        </p>          
+                    </div>
+
+                    <div class="col-lg-6 text-center">    
+                      <div id="chart_div4" class="chart"> </div>      
+                    </div>
+
+                  </div>
+
             </div>
     </section>
 
     <footer class="footer">
       <div class="container">
-        <p class="text-center">A Cornell Daily Sun project. By Megan Roche, Emma Williams, and Brian LaPlaca.</p>
+        <p class="text-center">A Cornell Daily Sun Design project.</p>
       </div>
     </footer>
     
@@ -309,6 +370,7 @@ h2{
       google.charts.setOnLoadCallback(initChart1);
       google.charts.setOnLoadCallback(initChart2);
       google.charts.setOnLoadCallback(initChart3);
+      google.charts.setOnLoadCallback(initChart4);
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
@@ -561,10 +623,37 @@ h2{
           drawChart3(options);
         }
 
+      function initChart4() {
+          var options = {'title':"Non-Announcement Statements", 'colors': ['#B00519', '#FF5468', '#FC0744']};
+          var data4 = new google.visualization.DataTable();
+          data4.addColumn('string', 'Statement Type');
+          data4.addColumn('number', 'Number');
+          data4.addRows([
+            ["Greek Life", 3],
+              ["Student Injury or Death", 5],
+
+          ]);
+
+          function setOptions(t){
+            return {'title':t, 'colors': ['#B00519', '#FF5468']};
+          };
+
+          var chart = new google.visualization.PieChart(
+              document.getElementById('chart_div4'));
+
+          function drawChart4(options) {
+            // Disabling the button while the chart is drawing.
+            chart.draw(data4, options);
+          }
+
+          drawChart4(options);
+        }
+
       $(window).resize(function(){
         initChart1();
         initChart2();
         initChart3();
+        initChart4();
       });
 
     </script> 
@@ -576,6 +665,40 @@ h2{
         function unhover(element) {
             element.setAttribute('src', 'Swhite.png');
         }
+    </script>
+
+    <script type="text/javascript">
+    var pl = "Pollack Lombardi <b>comparisons.</b>";
+    var pr = "Pollack Rawlings <b>comparisons.</b>";
+    var po = "Pollack Other <b>comparisons.</b>";
+
+    var lr = "Rawlings Lombardi <b>comparisons.</b>";
+    var lo = "Other Lombardi <b>comparisons.</b>";
+
+    var ro = "Rawlings Other <b>comparisons.</b>";
+
+
+    $(".wordy").html(pl);
+
+        $("#getpeople").click(function() {
+          var val1 = $("#person1").val();
+          var val2 = $("#person2").val();
+
+          if ((val1=="pollack1" && val2=="lombardi2") || (val1=="pollack2" && val2=="lombardi1")){
+            $(".wordy").html(pl);
+          } if ((val1=="pollack1" && val2=="rawlings2") || (val1=="pollack2" && val2=="rawlings1")){
+            $(".wordy").html(pr);
+          } if ((val1=="pollack1" && val2=="other2") || (val1=="pollack2" && val2=="other1")){
+            $(".wordy").html(po);
+          } if ((val1=="rawlings1" && val2=="lombardi2") || (val1=="rawlings2" && val2=="lombardi1")){
+            $(".wordy").html(lr);
+          } if ((val1=="other1" && val2=="lombardi2") || (val1=="other2" && val2=="lombardi1")){
+            $(".wordy").html(lo);
+          } if ((val1=="other1" && val2=="rawlings2") || (val1=="other2" && val2=="rawlings1")){
+            $(".wordy").html(ro);
+          }
+          console.log(val1, val2);
+        });
     </script>
 
   </body>
