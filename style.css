@@ -31,8 +31,20 @@
 
     a:hover{
         color:#0971B2;
+        text-decoration: none;
+    }
+
+    .navbar{
+        padding-left:10%;
+        padding-right:10%;
+        margin-bottom:10%;
+    }
+
+    .footer{
+        font-family: 'Proxima Nova', sans-serif;
     }
 }
+
 
 
 @media only screen and (max-width: 600px) {
@@ -46,7 +58,7 @@
     }
 
     p{
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Proxima Nova', sans-serif;
         font-weight:400;
         font-size:20px;
         color:#575757;
@@ -68,5 +80,9 @@
         letter-spacing: 24px;
         margin-left:20%;
         font-size:36px;
+    }
+
+    .footer{
+        font-family: 'Proxima Nova', sans-serif;
     }
 }
