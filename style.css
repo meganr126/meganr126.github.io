@@ -37,13 +37,13 @@
         font-weight:700;
         font-size:30px;
         color:#0971B2;
-        margin-left:7%;
+        margin-left:9%;
         margin-top:13%;
     }
 
     p{
         font-family: 'Proxima Nova', sans-serif;
-        font-weight:400;
+        font-weight:300;
         font-size:18px;
         color:#575757;
         margin-left:9%;
@@ -62,5 +62,6 @@
 
     .links{
         line-height: .5;
+        margin-left:9%;
     }
 }
