@@ -1,6 +1,6 @@
 @media only screen and (min-width: 600px) {
     h1{ 
-        font-family: 'Quicksand', sans-serif;
+        font-family: 'Arvo', serif;
         font-weight:700;
         font-size:48px;
         color:#0971B2;
@@ -9,9 +9,9 @@
     }
 
     p{
-        font-family: 'Proxima Nova', sans-serif;
+        font-family: 'Lato', sans-serif;
         font-weight:300;
-        font-size:24px;
+        font-size:20px;
         color:#575757;
         margin-left:15%;
         max-width: 65%;
@@ -33,18 +33,18 @@
 
 @media only screen and (max-width: 600px) {
     h1{ 
-        font-family: 'Quicksand', sans-serif;
+        font-family: 'Arvo', serif;
         font-weight:700;
-        font-size:30px;
+        font-size:26px;
         color:#0971B2;
         margin-left:9%;
         margin-top:13%;
     }
 
     p{
-        font-family: 'Proxima Nova', sans-serif;
+        font-family: 'Lato', sans-serif;
         font-weight:300;
-        font-size:18px;
+        font-size:16px;
         color:#575757;
         margin-left:9%;
         max-width: 85%;
@@ -63,5 +63,7 @@
     .links{
         line-height: .5;
         margin-left:9%;
+        font-size:24px;
+
     }
 }
